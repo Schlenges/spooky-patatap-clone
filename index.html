@@ -166,11 +166,17 @@
 			color: '#2c3e50'
 		}
 	}
+	
+	var text = new PointText(new Point(view.size.width/2, view.size.height/2));
+	text.justification = 'center';
+	text.fillColor = 'white';
+	text.content = 'Press any alphabet key';
 
 	var circles = [];
 
 	function onKeyDown(event){
 		if(keyData[event.key]){
+			text.remove();
 			var maxPoint = new Point(view.size.width, view.size.height);
 			var randomPoint = Point.random();
 			var point = maxPoint * randomPoint;
